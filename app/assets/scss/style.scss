@@ -1,0 +1,19 @@
+@use "sass:math";
+
+/* Bootstrapping */
+@import "includes/helpers/_normalize.scss";
+@import "includes/helpers/_variables.scss";
+@import "includes/helpers/_mixins.scss";
+
+/* Partials */
+@import "includes/base-styles/_animation.scss";
+@import "includes/base-styles/_general.scss";
+@import "includes/base-styles/_layout.scss";
+@import "includes/base-styles/_fonts.scss";
+@import "includes/base-styles/_typography.scss";
+@import "includes/base-styles/_buttons.scss";
+@import "includes/base-styles/_tables.scss";
+@import "includes/base-styles/_forms.scss";
+
+/* Modules */
+@import "includes/modules/_earnings-snapshot.scss";

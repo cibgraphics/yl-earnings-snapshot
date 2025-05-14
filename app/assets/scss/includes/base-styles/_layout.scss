@@ -1,0 +1,145 @@
+/*
+-----------------------------------------
+LAYOUT
+-----------------------------------------
+*/
+
+/* Margin and Padding */
+$baseSize: 0;
+
+@while $baseSize <= 100 {
+  .m-#{$baseSize},
+  %m-#{$baseSize} {
+    margin: #{$baseSize}px !important;
+  }
+
+  .mt-#{$baseSize},
+  %mt-#{$baseSize} {
+    margin-block-start: #{$baseSize}px !important;
+  }
+
+  .mr-#{$baseSize},
+  %mr-#{$baseSize} {
+    margin-inline-end: #{$baseSize}px !important;
+  }
+
+  .mb-#{$baseSize},
+  %mb-#{$baseSize} {
+    margin-block-end: #{$baseSize}px !important;
+  }
+
+  .ml-#{$baseSize},
+  %ml-#{$baseSize} {
+    margin-inline-start: #{$baseSize}px !important;
+  }
+
+  .mx-#{$baseSize},
+  %mx-#{$baseSize} {
+    margin-inline: #{$baseSize}px !important;
+  }
+
+  .my-#{$baseSize},
+  %my-#{$baseSize} {
+    margin-block: #{$baseSize}px !important;
+  }
+
+  .p-#{$baseSize},
+  %p-#{$baseSize} {
+    padding: #{$baseSize}px !important;
+  }
+
+  .pt-#{$baseSize},
+  %pt-#{$baseSize} {
+    padding-block-start: #{$baseSize}px !important;
+  }
+
+  .pr-#{$baseSize},
+  %pr-#{$baseSize} {
+    padding-inline-end: #{$baseSize}px !important;
+  }
+
+  .pb-#{$baseSize},
+  %pb-#{$baseSize} {
+    padding-block-end: #{$baseSize}px !important;
+  }
+
+  .pl-#{$baseSize},
+  %pl-#{$baseSize} {
+    padding-inline-start: #{$baseSize}px !important;
+  }
+
+  .px-#{$baseSize},
+  %px-#{$baseSize} {
+    padding-inline: #{$baseSize}px !important;
+  }
+
+  .py-#{$baseSize},
+  %py-#{$baseSize} {
+    padding-block: #{$baseSize}px !important;
+  }
+
+  // Increment the counter
+  $baseSize: $baseSize + 4;
+}
+
+.page-wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: clip;
+  position: relative;
+  @include transition(transform);
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  box-shadow: var(--shadow);
+  background: var(--tan);
+
+  @include mq("tablet", "<") {
+    .mobile-nav-open & {
+      transform: translateX(calc(-100% + var(--mobile-nav-offset)));
+    }
+  }
+}
+
+.mobile-nav-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 248, 242, 0.8);
+  backdrop-filter: blur(3.5px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  @include transition(opacity);
+
+  @include mq("tablet", "<") {
+    .mobile-nav-open & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
+main {
+  background: var(--content-background);
+  flex: 1;
+  padding-block-start: rem(32);
+
+  // > .container:first-child {
+  //   .content {
+  //     padding-block-start: 0;
+  //   }
+  // }
+}
+
+.container {
+  padding: 0 20px;
+  background: var(--content-background);
+}
+
+.content {
+  max-width: var(--site-width);
+  margin: 0 auto;
+  position: relative;
+  padding-block: rem(40);
+}

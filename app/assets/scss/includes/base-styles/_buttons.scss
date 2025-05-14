@@ -1,0 +1,81 @@
+/*
+-----------------------------------------
+BUTTONS
+-----------------------------------------
+*/
+
+.button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  @include transition();
+  -webkit-appearance: none;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: var(--white);
+  text-decoration: none;
+  padding: rem(12) rem(32);
+  text-align: center;
+  width: auto;
+  border-radius: var(--radius);
+  font-size: rem(16);
+  line-height: 1.4;
+  gap: rem(10);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: var(--olive);
+    border: 1px solid var(--olive);
+    color: var(--white);
+  }
+
+  &.ghost {
+    background: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: var(--white);
+      color: var(--olive);
+      border-color: var(--olive);
+    }
+  }
+
+  svg {
+    display: block;
+    height: rem(20);
+    width: rem(20);
+    fill: var(--white);
+  }
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  // Alignment
+
+  &.align-center {
+    justify-content: center;
+  }
+
+  &.align-right {
+    justify-content: flex-end;
+  }
+
+  &.align-spaced {
+    justify-content: space-between;
+  }
+}
+
+.simple {
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}

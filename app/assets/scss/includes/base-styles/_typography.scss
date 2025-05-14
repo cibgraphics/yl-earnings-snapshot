@@ -1,0 +1,144 @@
+/*
+-----------------------------------------
+TYPOGRAPHY
+-----------------------------------------
+*/
+
+/*  Basics */
+
+a {
+  color: var(--link-color);
+  @include transition();
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--link-hover-color);
+  }
+}
+
+p,
+li {
+  font-size: rem(16);
+  line-height: 1.4em;
+  font-weight: var(--normal);
+  color: var(--text-color);
+}
+
+ol,
+ul,
+p {
+  margin-block-end: 1.2em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+li {
+  margin-block-end: rem(10);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+ul,
+ol {
+  &:not(.list-unstyled) {
+    margin-block-start: 0.5em;
+    margin-inline-start: rem(20);
+  }
+}
+li {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+small {
+  font-size: 0.9em;
+}
+
+blockquote {
+}
+
+hr {
+}
+
+/* Headers */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-header--1,
+.text-header--2,
+.text-header--3,
+.text-header--4,
+.text-header--5,
+.text-header--6 {
+  line-height: 1.4;
+  font-weight: var(--normal);
+  color: var(--text-color);
+  margin-bottom: rem(10);
+}
+
+.text-header--1,
+h1 {
+  font-size: rem(48);
+}
+
+.text-header--2,
+h2 {
+  font-size: rem(40);
+}
+
+.text-header--3,
+h3 {
+  font-size: rem(33);
+}
+
+.text-header--4,
+h4 {
+  font-size: rem(28);
+}
+
+.text-header--5,
+h5 {
+  font-size: rem(19);
+}
+
+.text-header--6,
+h6 {
+  font-size: rem(18);
+}
+
+.subheader {
+  font-weight: var(--bold);
+  font-size: rem(14);
+  color: var(--primary);
+}
+
+.text-white {
+  color: white;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  a,
+  span,
+  strong,
+  em,
+  small,
+  blockquote {
+    color: inherit;
+  }
+}

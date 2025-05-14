@@ -1,0 +1,32 @@
+block vars
+
+include ../partials/mixins.pug
+
+doctype html
+html(lang='en-US', dir='ltr')
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='Earnings Snapshot')
+    meta(name='keywords', content='')
+
+    title Earnings Snapshot
+
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name='format-detection', content='telephone=no')
+    meta(name='application-name', content='NibleyMade')
+
+    link(href='/assets/css/style.css', rel='stylesheet', media='screen')
+
+
+  body
+    div(style="display: none")
+      include ../../../build/assets/svg/svg-sprite.svg
+  
+    .page-wrapper
+      main#main-content
+        block content
+
+    script(defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js")
+    script(src='./assets/js/app.min.js')
+  
