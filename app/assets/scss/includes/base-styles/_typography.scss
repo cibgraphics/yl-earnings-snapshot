@@ -9,7 +9,6 @@ TYPOGRAPHY
 a {
   color: var(--yl-link-color);
   @include transition();
-  display: inline-flex;
 
   &:hover,
   &:focus,
