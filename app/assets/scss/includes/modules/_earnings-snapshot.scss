@@ -6,7 +6,24 @@ Earnings Snapshot
 
 .shadow-box {
   box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.15);
-  padding: rem(32);
+  padding: rem(24);
   background: var(--yl-white);
   border-radius: var(--yl-radius);
+
+  .shadow-box-header {
+    font-size: rem(14);
+    color: var(--yl-gray-40);
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+  }
+}
+
+.earning-value {
+  font-size: rem(50);
+  font-weight: var(--yl-font-weight-normal);
+  font-family: var(--yl-font-serif);
+}
+
+.see-more {
+  text-align: end;
 }

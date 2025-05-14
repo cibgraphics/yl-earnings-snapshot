@@ -15,12 +15,26 @@ a {
   &:active {
     color: var(--yl-link-hover-color);
   }
+
+  &.decoration-none {
+    text-decoration: none;
+  }
+
+  &.color-secondary {
+    color: var(--yl-olive);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--yl-olive);
+    }
+  }
 }
 
 p,
 li {
   font-size: rem(16);
-  line-height: 1.4em;
+  line-height: 1.2em;
   font-weight: var(--yl-normal);
   color: var(--yl-text-color);
 }

@@ -16,6 +16,12 @@ COLORS
 */
 :root {
   // PRIMARY
+  --yl-olive-dark: #457e6f;
+  --yl-olive: #5ea386;
+  --yl-olive-light: #d3ede0;
+
+  --yl-blue: #297899;
+  --yl-blue-light: #93b9cc;
 
   // NEUTRAL
   --yl-white: #fff;
@@ -23,7 +29,7 @@ COLORS
   --yl-gray-10: #e6e6e6;
   --yl-gray-20: #cccccc;
   --yl-gray-30: #b3b3b3;
-  --yl-gray-40: #b3b3b3;
+  --yl-gray-40: #a7a7a7;
   --yl-gray-50: #808080;
   --yl-gray-60: #666666;
   --yl-gray-70: #4d4d4d;
@@ -33,18 +39,19 @@ COLORS
 
   // Forms
 
-  --yl-base-color: var(--yl-yl-white);
-  --yl-content-background: var(--yl-yl-white);
+  --yl-base-color: var(--yl-white);
+  --yl-content-background: var(--yl-white);
 
   // Text
-  --yl-text-color: var(--yl-yl-black);
-  --yl-link-color: var(--yl-yl-primary);
+  --yl-text-color: var(--yl-black);
+  --yl-link-color: var(--yl-blue);
+  --yl-link-hover-color: var(--yl-blue-light);
 
   // User Select (colors when a user selects objects on screen)
-  --yl-select-background: var(--yl-yl-olive);
-  --yl-select-text: var(--yl-yl-white);
+  --yl-select-background: var(--yl-olive);
+  --yl-select-text: var(--yl-white);
 
-  --yl-placeholder-color: var(--yl-yl-gray-30);
+  --yl-placeholder-color: var(--yl-gray-30);
 }
 
 /*
@@ -56,7 +63,7 @@ FONTS
 // Font Family
 :root {
   --yl-base-font-size-strip: 16;
-  --yl-base-font-size: var(--yl-yl-base-font-size-strip) * 1px;
+  --yl-base-font-size: var(--yl-base-font-size-strip) * 1px;
 
   --yl-font-serif: "Domaine Display", serif;
   --yl-font-sans: "GT Walsheim Pro", sans-serif;
