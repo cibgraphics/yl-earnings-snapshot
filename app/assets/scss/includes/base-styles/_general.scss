@@ -5,12 +5,12 @@ Background Highlights
 */
 
 ::-moz-selection {
-  background: var(--select-background);
-  color: var(--select-text);
+  background: var(--yl-select-background);
+  color: var(--yl-select-text);
 }
 ::selection {
-  background: var(--select-background);
-  color: var(--select-text);
+  background: var(--yl-select-background);
+  color: var(--yl-select-text);
 }
 
 /*
@@ -33,48 +33,13 @@ html {
   /* Prevents webpage zooming for mobile devices change orientation */
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  font-size: var(--font-size);
-  font-family: var(--font);
-  font-weight: var(--normal);
+  font-size: var(--yl-font-size);
+  font-family: var(--yl-font);
+  font-weight: var(--yl-normal);
 }
 
 body {
-  background: var(--base-color);
-}
-
-::-webkit-scrollbar {
-  width: 1em;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--white);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--olive);
-  border-radius: var(--radius);
-  border: 3px solid var(--white);
-}
-
-.skip-to-content {
-  position: absolute;
-  top: -40px;
-  left: -40px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-
-  &:focus {
-    top: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-    overflow: visible;
-    background: var(--primary);
-    color: var(--white);
-    padding: rem(10) rem(20);
-    z-index: 1000;
-  }
+  background: var(--yl-base-color);
 }
 
 /*
@@ -87,36 +52,12 @@ img {
   max-width: 100%;
 }
 
-.relative {
-  position: relative;
-}
-
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
-
-.text-left {
-  text-align: left;
-}
-
 .text-center {
   text-align: center;
 }
 
 .text-right {
   text-align: right;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.bold {
-  font-weight: bold;
 }
 
 .sc-only {
@@ -147,16 +88,16 @@ FORM ADJUSTMENTS
 */
 
 ::-webkit-input-placeholder {
-  color: var(--placeholder-color);
+  color: var(--yl-placeholder-color);
 }
 ::-moz-placeholder {
-  color: var(--placeholder-color);
+  color: var(--yl-placeholder-color);
 }
 :-ms-input-placeholder {
-  color: var(--placeholder-color);
+  color: var(--yl-placeholder-color);
 }
 input:-moz-placeholder {
-  color: var(--placeholder-color);
+  color: var(--yl-placeholder-color);
 }
 
 input[type="text"],

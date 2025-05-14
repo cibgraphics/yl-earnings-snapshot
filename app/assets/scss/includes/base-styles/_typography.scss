@@ -7,13 +7,13 @@ TYPOGRAPHY
 /*  Basics */
 
 a {
-  color: var(--link-color);
+  color: var(--yl-link-color);
   @include transition();
 
   &:hover,
   &:focus,
   &:active {
-    color: var(--link-hover-color);
+    color: var(--yl-link-hover-color);
   }
 }
 
@@ -21,8 +21,8 @@ p,
 li {
   font-size: rem(16);
   line-height: 1.4em;
-  font-weight: var(--normal);
-  color: var(--text-color);
+  font-weight: var(--yl-normal);
+  color: var(--yl-text-color);
 }
 
 ol,
@@ -81,8 +81,8 @@ h6,
 .text-header--5,
 .text-header--6 {
   line-height: 1.4;
-  font-weight: var(--normal);
-  color: var(--text-color);
+  font-weight: var(--yl-normal);
+  color: var(--yl-text-color);
   margin-bottom: rem(10);
 }
 
@@ -114,31 +114,4 @@ h5 {
 .text-header--6,
 h6 {
   font-size: rem(18);
-}
-
-.subheader {
-  font-weight: var(--bold);
-  font-size: rem(14);
-  color: var(--primary);
-}
-
-.text-white {
-  color: white;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  li,
-  a,
-  span,
-  strong,
-  em,
-  small,
-  blockquote {
-    color: inherit;
-  }
 }

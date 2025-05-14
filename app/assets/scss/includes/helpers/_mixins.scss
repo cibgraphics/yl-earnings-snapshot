@@ -21,9 +21,8 @@ Requires $font-size variable to be set
 }
 
 @function rem($value) {
-  @return calc(#{$value} / var(--base-font-size-strip) * 1rem);
+  @return calc(#{$value} / var(--yl-base-font-size-strip) * 1rem);
 }
-
 
 /*
 -----------------------------------------
@@ -31,11 +30,10 @@ BOX SIZING
 -----------------------------------------
 */
 @mixin box-sizing($sizing: border-box) {
-     -moz-box-sizing: $sizing;
+  -moz-box-sizing: $sizing;
   -webkit-box-sizing: $sizing;
-          box-sizing: $sizing;
+  box-sizing: $sizing;
 }
-
 
 /*
 -----------------------------------------
@@ -56,7 +54,6 @@ CLEAR FLOAT
   }
 }
 
-
 /*
 -----------------------------------------
 CSS3
@@ -65,27 +62,32 @@ Please use autoprefixer
 */
 
 // Box Shadow
-@mixin box-shadow ($x: 0px, $y: 3px, $blur: 5px, $alpha: 0.5) {
+@mixin box-shadow($x: 0px, $y: 3px, $blur: 5px, $alpha: 0.5) {
   box-shadow: $x $y $blur rgba(0, 0, 0, $alpha);
 }
 
 // Box Shadow Color
-@mixin box-shadow-color ($x: 0px, $y: 3px, $blur: 5px, $color: rgba(0,0,0,.5)) {
+@mixin box-shadow-color(
+  $x: 0px,
+  $y: 3px,
+  $blur: 5px,
+  $color: rgba(0, 0, 0, 0.5)
+) {
   box-shadow: $x $y $blur $color;
 }
 
 // Inner Shadow
-@mixin inner-shadow ($x: 0, $y: 1px, $blur: 2px, $alpha: 0.25) {
+@mixin inner-shadow($x: 0, $y: 1px, $blur: 2px, $alpha: 0.25) {
   box-shadow: inset $x $y $blur rgba(0, 0, 0, $alpha);
 }
 
 // Animation
-@mixin animation ($name, $duration: 300ms, $delay: 0, $ease: ease) {
+@mixin animation($name, $duration: 300ms, $delay: 0, $ease: ease) {
   animation: $name $duration $delay $ease;
 }
 
 // Transition
-@mixin transition ($prop: all, $time: 0.2s, $ease: linear) {
+@mixin transition($prop: all, $time: 0.2s, $ease: linear) {
   transition: $prop $time $ease;
 }
 
@@ -115,11 +117,10 @@ Please use autoprefixer
 }
 
 // Linear Gradient
-@mixin gradient ($origin: bottom, $start: #ffffff, $stop: #e2e2e2) {
+@mixin gradient($origin: bottom, $start: #ffffff, $stop: #e2e2e2) {
   background: $start;
   background: linear-gradient(to $origin, $start 0%, $stop 100%);
 }
-
 
 /*
 -----------------------------------------
@@ -128,15 +129,18 @@ ZEBRA STRIPE
 */
 
 // Table Zebra Stripe
-@mixin zebra-stripe($stripe_color: #F0F0F0) {
-  tbody tr:nth-child(2n+1) { background: $stripe_color; }
+@mixin zebra-stripe($stripe_color: #f0f0f0) {
+  tbody tr:nth-child(2n + 1) {
+    background: $stripe_color;
+  }
 }
 
 // List Zebra Stripe
-@mixin zebra-list-stripe($stripe_color: #F0F0F0) {
-  li:nth-child(2n+1) { background: $stripe_color; }
+@mixin zebra-list-stripe($stripe_color: #f0f0f0) {
+  li:nth-child(2n + 1) {
+    background: $stripe_color;
+  }
 }
-
 
 /*
 -----------------------------------------
@@ -144,7 +148,7 @@ PSUEDO
 -----------------------------------------
 */
 
-@mixin pseudo($display: block, $pos: absolute, $content: ''){
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
   content: $content;
   display: $display;
   position: $pos;

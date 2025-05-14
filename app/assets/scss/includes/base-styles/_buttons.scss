@@ -11,14 +11,14 @@ BUTTONS
   border: none;
   @include transition();
   -webkit-appearance: none;
-  background: var(--primary);
-  border: 1px solid var(--primary);
-  color: var(--white);
+  background: var(--yl-primary);
+  border: 1px solid var(--yl-primary);
+  color: var(--yl-white);
   text-decoration: none;
   padding: rem(12) rem(32);
   text-align: center;
   width: auto;
-  border-radius: var(--radius);
+  border-radius: var(--yl-radius);
   font-size: rem(16);
   line-height: 1.4;
   gap: rem(10);
@@ -26,22 +26,22 @@ BUTTONS
   &:hover,
   &:focus,
   &:active {
-    background: var(--olive);
-    border: 1px solid var(--olive);
-    color: var(--white);
+    background: var(--yl-olive);
+    border: 1px solid var(--yl-olive);
+    color: var(--yl-white);
   }
 
   &.ghost {
     background: transparent;
-    color: var(--primary);
-    border-color: var(--primary);
+    color: var(--yl-primary);
+    border-color: var(--yl-primary);
 
     &:hover,
     &:focus,
     &:active {
-      background: var(--white);
-      color: var(--olive);
-      border-color: var(--olive);
+      background: var(--yl-white);
+      color: var(--yl-olive);
+      border-color: var(--yl-olive);
     }
   }
 
@@ -49,7 +49,7 @@ BUTTONS
     display: block;
     height: rem(20);
     width: rem(20);
-    fill: var(--white);
+    fill: var(--yl-white);
   }
 }
 

@@ -7,7 +7,7 @@ LAYOUT
 /* Margin and Padding */
 $baseSize: 0;
 
-@while $baseSize <= 100 {
+@while $baseSize <= 48 {
   .m-#{$baseSize},
   %m-#{$baseSize} {
     margin: #{$baseSize}px !important;
@@ -92,53 +92,19 @@ $baseSize: 0;
   display: flex;
   flex-direction: column;
   z-index: 2;
-  box-shadow: var(--shadow);
-  background: var(--tan);
-
-  @include mq("tablet", "<") {
-    .mobile-nav-open & {
-      transform: translateX(calc(-100% + var(--mobile-nav-offset)));
-    }
-  }
-}
-
-.mobile-nav-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 248, 242, 0.8);
-  backdrop-filter: blur(3.5px);
-  z-index: 1000;
-  opacity: 0;
-  pointer-events: none;
-  @include transition(opacity);
-
-  @include mq("tablet", "<") {
-    .mobile-nav-open & {
-      opacity: 1;
-      pointer-events: auto;
-    }
-  }
 }
 
 main {
-  background: var(--content-background);
-  flex: 1;
-  padding-block-start: rem(32);
-
-  // > .container:first-child {
-  //   .content {
-  //     padding-block-start: 0;
-  //   }
-  // }
+  background: var(--yl-content-background);
 }
 
 .container {
-  padding: 0 20px;
-  background: var(--content-background);
+  padding: 0 rem(24);
+  background: var(--yl-content-background);
 }
 
 .content {
-  max-width: var(--site-width);
+  max-width: var(--yl-site-width);
   margin: 0 auto;
   position: relative;
   padding-block: rem(40);
