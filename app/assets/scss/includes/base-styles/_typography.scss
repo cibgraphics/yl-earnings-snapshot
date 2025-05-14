@@ -9,6 +9,7 @@ TYPOGRAPHY
 a {
   color: var(--yl-link-color);
   @include transition();
+  display: inline-flex;
 
   &:hover,
   &:focus,
@@ -78,6 +79,14 @@ blockquote {
 }
 
 hr {
+}
+
+.icon-space-before {
+  margin-inline-start: rem(8);
+}
+
+.icon-space-after {
+  margin-inline-end: rem(8);
 }
 
 /* Headers */
