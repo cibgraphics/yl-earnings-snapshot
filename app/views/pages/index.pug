@@ -53,7 +53,7 @@ block content
             .progress-bar-single
               .progress-bar-label
                 p= bundle.label
-                p.text-right= bundle.amount
+                p.bar-value= bundle.amount
               .progress-bar.progress-bar-secondary
                 .progress-bar-fill(style=`width: ${bundle.width}`)
         
@@ -62,6 +62,6 @@ block content
             .progress-bar-single
               .progress-bar-label
                 p= bundle.label
-                p.text-right= bundle.amount
+                p.bar-value= bundle.amount
               .progress-bar
                 .progress-bar-fill(style=`width: ${bundle.width}`)
