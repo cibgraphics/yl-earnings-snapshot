@@ -21,12 +21,12 @@ a {
   }
 
   &.color-secondary {
-    color: var(--yl-olive);
+    color: var(--yl-blue);
 
     &:hover,
     &:focus,
     &:active {
-      color: var(--yl-olive);
+      color: var(--yl-blue);
     }
   }
 }

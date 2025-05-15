@@ -33,3 +33,43 @@ Earnings Snapshot
   border-radius: var(--yl-radius);
   padding: rem(16) rem(32);
 }
+
+/* Progress Bars */
+
+.progress-bar-group {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+}
+
+.progress-bar-label {
+  display: flex;
+  justify-content: space-between;
+  gap: rem(20);
+  margin-block-end: rem(4);
+
+  p {
+    font-size: rem(14);
+    margin-bottom: 0;
+  }
+}
+
+.progress-bar {
+  --progress-bar: var(--yl-olive-light);
+  --progress-bar-fill: var(--yl-olive);
+
+  background-color: var(--progress-bar);
+  border-radius: var(--yl-radius);
+  height: rem(12);
+
+  .progress-bar-fill {
+    background-color: var(--progress-bar-fill);
+    border-radius: var(--yl-radius);
+    height: 100%;
+  }
+
+  &.progress-bar-secondary {
+    --progress-bar: var(--yl-blue-light);
+    --progress-bar-fill: var(--yl-blue);
+  }
+}

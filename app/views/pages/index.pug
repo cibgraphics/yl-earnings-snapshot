@@ -1,7 +1,17 @@
 extends ../layouts/layout.pug
 
-block content
+block vars
+  - 
+    const bundles = [
+      { label: 'Starter Bundle Bonus', amount: 'USD 25', width: '0%' },
+      { label: 'Fast Start Bonus', amount: 'USD 3,102', width: '10%' },
+      { label: 'Unilevel Bonus Total', amount: 'USD 9,934', width: '30%' },
+      { label: 'Generation Leadership Bonus', amount: 'USD 3,520', width: '20%' },
+      { label: 'Personal Generation', amount: 'USD 2,663', width: '10%' },
+      { label: 'Generations', amount: 'USD 7,491', width: '20%' }
+    ]
 
+block content
   // The container .my-48 is not needed. This is just for make it nicer to display for working on
   .my-48
 
@@ -9,18 +19,18 @@ block content
       .content
         .shadow-box
           h2.shadow-box-header Earnings Snapshot
-            a(href="#0").decoration-none.color-secondary
+            a(href="#0").decoration-none
               i.fa-regular.fa-circle-question.icon-space-before
           .text-center.mb-12
             h3.text-header--5.mb-4 Current Rank: 
               span.rank 
                 | Platinum
             p 
-              a(href="#0").decoration-none Estimate Earnings as Another Rank
+              a(href="#0").decoration-none.color-secondary Estimate Earnings as Another Rank
                 i.fa-solid.fa-arrow-right.icon-space-before
             p.earning-value USD 26,726
           p.see-more
-            a(href="#0").see-more.color-secondary.decoration-none See Breakdown 
+            a(href="#0").see-more.decoration-none See Breakdown 
               i.fa-solid.fa-arrow-right.icon-space-before
 
   .my-48 
@@ -30,10 +40,28 @@ block content
         .text-center.mb-24
           h2.text-header--5 Estimate Earnings as Another Rank
           p
-            a(href="#0") See Earning Snapshot Disclosure
+            a(href="#0").color-secondary See Earning Snapshot Disclosure
 
         .banner.text-white 
           p.text-large You are estimating your earnings as another rank. Click below to see your current estimate.
           p.see-more
             a(href="#0").see-more.decoration-none.text-uppercase See Breakdown 
               i.fa-solid.fa-arrow-right.icon-space-before
+
+        .progress-bar-group.mt-48 
+          each bundle in bundles
+            .progress-bar-single
+              .progress-bar-label
+                p= bundle.label
+                p.text-right= bundle.amount
+              .progress-bar.progress-bar-secondary
+                .progress-bar-fill(style=`width: ${bundle.width}`)
+        
+        .progress-bar-group.mt-48 
+          each bundle in bundles
+            .progress-bar-single
+              .progress-bar-label
+                p= bundle.label
+                p.text-right= bundle.amount
+              .progress-bar
+                .progress-bar-fill(style=`width: ${bundle.width}`)
