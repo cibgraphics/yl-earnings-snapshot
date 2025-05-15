@@ -85,6 +85,37 @@ block content
                 p.bar-value= bundle.amount
               .progress-bar.progress-bar-secondary
                 .progress-bar-fill(style=`width: ${bundle.width}`)
+
+  .my-48 
+    section.container
+      .content
+
+        .text-center.mb-24
+          h2.text-header--5 Earning Snapshot
+
+        .columns.mb-32 
+          .column
+            .field
+              select.style-light
+                option(value="") May 2025 
+                option(value="") June 2025 
+                option(value="") July 2025 
+                option(value="") August 2025 
+                option(value="") Sept 2025 
+          .column
+            .field
+              select.style-light
+                option(value="") Currency: USD 
+                option(value="") Currency: USD 
+                option(value="") Currency: USD 
+                option(value="") Currency: USD 
+                option(value="") Currency: USD
+
+        .text-center
+          h3.text-header--5.subheader Earnings Snapshot
+          p.earning-value USD 26,726 
+
+          h2.text-header--3.mt-32 Earned Rank: Platinum
         
         .progress-bar-group.mt-48 
           each bundle in bundles
