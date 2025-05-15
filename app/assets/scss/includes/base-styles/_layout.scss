@@ -109,3 +109,12 @@ main {
   position: relative;
   padding-block: rem(40);
 }
+
+.columns {
+  display: flex;
+  gap: rem(32);
+
+  > * {
+    flex: 1;
+  }
+}

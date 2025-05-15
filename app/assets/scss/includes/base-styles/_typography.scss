@@ -18,6 +18,10 @@ a {
 
   &.decoration-none {
     text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &.color-secondary {

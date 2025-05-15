@@ -13,7 +13,6 @@ label {
   color: var(--yl-text-color);
   margin-bottom: rem(6);
   line-height: 1.4em;
-  padding-inline-start: rem(16);
 }
 
 input,
@@ -52,9 +51,26 @@ textarea {
 }
 
 select {
+  appearance: none;
+  padding: rem(12) rem(24) rem(12) rem(12);
+  color: var(--yl-white);
+  font-size: rem(16);
   width: 100%;
+  text-align: center;
+  border: none;
+  background-color: var(--yl-blue-light);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi4wMDIiIGhlaWdodD0iNi45ODMiIHZpZXdCb3g9IjAgMCAxMi4wMDIgNi45ODMiPgogIDxwYXRoIGlkPSJQYXRoXzM4MyIgZGF0YS1uYW1lPSJQYXRoIDM4MyIgZD0iTTUuNi01LjY3N2EuNTY3LjU2NywwLDAsMCwuOCwwbDUuNDM3LTUuNTIyYS41NjMuNTYzLDAsMCwwLDAtLjhsLS4zMzMtLjMzM2EuNTYzLjU2MywwLDAsMC0uOCwwTDYtNy41MzNsLTQuNzA2LTQuOGEuNTYzLjU2MywwLDAsMC0uOCwwTC4xNjQtMTJhLjU2My41NjMsMCwwLDAsMCwuOFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAxIDEyLjQ5MykiIGZpbGw9IiNmZmZmZmYiLz4KPC9zdmc+Cg==");
 
-  option {
+  background-repeat: no-repeat;
+  background-position: right rem(12) top 50%;
+  background-size: rem(12) rem(7);
+  border-radius: var(--yl-radius);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+  &:focus {
+    outline: 2px solid var(--yl-blue);
+    outline-offset: 2px;
+    border-radius: var(--yl-radius);
   }
 }
 
@@ -65,5 +81,9 @@ FORM LAYOUT
 */
 
 .field {
-  margin-bottom: 24px;
+  margin-block-end: 24px;
+
+  &:last-child {
+    margin-block-end: 0;
+  }
 }
