@@ -34,9 +34,13 @@ a {
 p,
 li {
   font-size: rem(16);
-  line-height: 1.2em;
+  line-height: 1.4em;
   font-weight: var(--yl-normal);
   color: var(--yl-text-color);
+
+  &.text-large {
+    font-size: rem(18);
+  }
 }
 
 ol,
@@ -80,12 +84,16 @@ blockquote {
 hr {
 }
 
+.text-uppercase {
+  text-transform: uppercase;
+}
+
 .icon-space-before {
-  margin-inline-start: rem(8);
+  margin-inline-start: rem(4);
 }
 
 .icon-space-after {
-  margin-inline-end: rem(8);
+  margin-inline-end: rem(4);
 }
 
 /* Headers */
@@ -136,4 +144,25 @@ h5 {
 .text-header--6,
 h6 {
   font-size: rem(18);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-header--1,
+.text-header--2,
+.text-header--3,
+.text-header--4,
+.text-header--5,
+.text-header--6,
+p,
+a,
+li {
+  .text-white &,
+  &.text-white {
+    color: var(--yl-white);
+  }
 }

@@ -2,14 +2,14 @@ extends ../layouts/layout.pug
 
 block content
 
-  // The container .mt-48 is not needed. This is just for make it nicer to display for working on
-  .mt-48
+  // The container .my-48 is not needed. This is just for make it nicer to display for working on
+  .my-48
 
     section.container
       .content
         .shadow-box
           h2.shadow-box-header Earnings Snapshot
-            a(href="#0").decoration-none
+            a(href="#0").decoration-none.color-secondary
               i.fa-regular.fa-circle-question.icon-space-before
           .text-center.mb-12
             h3.text-header--5.mb-4 Current Rank: 
@@ -21,4 +21,19 @@ block content
             p.earning-value USD 26,726
           p.see-more
             a(href="#0").see-more.color-secondary.decoration-none See Breakdown 
+              i.fa-solid.fa-arrow-right.icon-space-before
+
+  .my-48 
+    section.container
+      .content
+        
+        .text-center.mb-24
+          h2.text-header--5 Estimate Earnings as Another Rank
+          p
+            a(href="#0") See Earning Snapshot Disclosure
+
+        .banner.text-white 
+          p.text-large You are estimating your earnings as another rank. Click below to see your current estimate.
+          p.see-more
+            a(href="#0").see-more.decoration-none.text-uppercase See Breakdown 
               i.fa-solid.fa-arrow-right.icon-space-before
