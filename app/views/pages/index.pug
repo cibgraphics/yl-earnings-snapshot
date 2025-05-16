@@ -13,7 +13,7 @@ block vars
 
 block content
   // The container .my-48 is not needed. This is just for make it nicer to display for working on
-  .my-48
+  .my-48(x-data="{ showModalEstimateEarnings: false, showModalEarningsSnapshot: false }") 
 
     section.container
       .content
@@ -26,70 +26,70 @@ block content
               span.rank 
                 | Platinum
             p 
-              a(href="#0").decoration-none.color-secondary Estimate Earnings as Another Rank
+              button( @click="showModalEstimateEarnings = true").simple.decoration-none.secondary Estimate Earnings as Another Rank
                 i.fa-solid.fa-arrow-right.icon-space-before
             p.earning-value USD 26,726
           p.see-more
-            a(href="#0").see-more.decoration-none See Breakdown 
+            button(@click="showModalEarningsSnapshot = true").simple See Breakdown 
               i.fa-solid.fa-arrow-right.icon-space-before
 
-  .my-48 
-    section.container
-      .content
-        
-        .text-center.mb-24
-          h2.text-header--5 Estimate Earnings as Another Rank
-          p
-            a(href="#0").color-secondary See Earning Snapshot Disclosure
 
-        .banner.text-white 
-          p.text-large You are estimating your earnings as another rank. Click below to see your current estimate.
-          p.see-more
-            a(href="#0").see-more.decoration-none.text-uppercase See Breakdown 
-              i.fa-solid.fa-arrow-right.icon-space-before
-        
-        .mb-24
-          .columns.mb-24 
-            .column
-              .field
-                select
-                  option(value="") May 2025 
-                  option(value="") June 2025 
-                  option(value="") July 2025 
-                  option(value="") August 2025 
-                  option(value="") Sept 2025 
-            .column
-              .field
-                select
-                  option(value="") Currency: USD 
-                  option(value="") Currency: USD 
-                  option(value="") Currency: USD 
-                  option(value="") Currency: USD 
-                  option(value="") Currency: USD 
+    +modal('showModalEstimateEarnings', 'modal-medium')
+      +modalHeader('showModalEstimateEarnings')
+        h2.text-header--5 Estimate Earnings as Another Rank
+        p
+          a(href="#0").color-secondary See Earning Snapshot Disclosure
 
-          .field
-            label Estimate Earnings As:
-            select
-              option(value="") Platinum 
-              option(value="") Crown Diamond 
-              option(value="") Royal Crown Diamond
-        
-        .text-center
-          p.earning-value USD 26,726
+      .banner.text-white 
+        p.text-large You are estimating your earnings as another rank. Click below to see your current estimate.
+        p.see-more
+          a(href="#0").see-more.decoration-none.text-uppercase See Breakdown 
+            i.fa-solid.fa-arrow-right.icon-space-before
+      
+      .mb-24
+        .columns.mb-24 
+          .column
+            .field
+              select
+                option(value="") May 2025 
+                option(value="") June 2025 
+                option(value="") July 2025 
+                option(value="") August 2025 
+                option(value="") Sept 2025 
+          .column
+            .field
+              select
+                option(value="") Currency: USD 
+                option(value="") Currency: USD 
+                option(value="") Currency: USD 
+                option(value="") Currency: USD 
+                option(value="") Currency: USD 
 
-        .progress-bar-group.mt-48 
-          each bundle in bundles
-            .progress-bar-single
-              .progress-bar-label
-                p= bundle.label
-                p.bar-value= bundle.amount
-              .progress-bar.progress-bar-secondary
-                .progress-bar-fill(style=`width: ${bundle.width}`)
+        .field
+          label Estimate Earnings As:
+          select
+            option(value="") Platinum 
+            option(value="") Crown Diamond 
+            option(value="") Royal Crown Diamond
+      
+      .text-center
+        p.earning-value USD 26,726
 
-  .my-48 
-    section.container
-      .content
+      .progress-bar-group.mt-48 
+        each bundle in bundles
+          .progress-bar-single
+            .progress-bar-label
+              p= bundle.label
+              p.bar-value= bundle.amount
+            .progress-bar.progress-bar-secondary
+              .progress-bar-fill(style=`width: ${bundle.width}`)
 
+    +modal('showModalEarningsSnapshot', 'modal-medium')
+      +modalHeader('showModalEarningsSnapshot')
+        h2.text-header--5 Estimate Earnings as Another Rank
+        p
+          a(href="#0").color-secondary See Earning Snapshot Disclosure
+      .modal-content
         .text-center.mb-24
           h2.text-header--5 Earning Snapshot
 

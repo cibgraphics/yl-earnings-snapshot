@@ -16,7 +16,7 @@
     <div class="page-wrapper">
       <main id="main-content">
         <!-- The container .my-48 is not needed. This is just for make it nicer to display for working on-->
-        <div class="my-48">
+        <div class="my-48" x-data="{ showModalEstimateEarnings: false, showModalEarningsSnapshot: false }"> 
           <section class="container">
             <div class="content">
               <div class="shadow-box">
@@ -24,217 +24,236 @@
                 <div class="text-center mb-12">
                   <h3 class="text-header--5 mb-4">Current Rank: <span class="rank">
                        Platinum</span></h3>
-                  <p> <a class="decoration-none color-secondary" href="#0">Estimate Earnings as Another Rank<i class="fa-solid fa-arrow-right icon-space-before"></i></a></p>
+                  <p> 
+                    <button class="simple decoration-none secondary" @click="showModalEstimateEarnings = true">Estimate Earnings as Another Rank<i class="fa-solid fa-arrow-right icon-space-before"></i></button>
+                  </p>
                   <p class="earning-value">USD 26,726</p>
                 </div>
-                <p class="see-more"><a class="see-more decoration-none" href="#0">See Breakdown <i class="fa-solid fa-arrow-right icon-space-before"></i></a></p>
+                <p class="see-more">
+                  <button class="simple" @click="showModalEarningsSnapshot = true">See Breakdown <i class="fa-solid fa-arrow-right icon-space-before"></i></button>
+                </p>
               </div>
             </div>
           </section>
-        </div>
-        <div class="my-48"> 
-          <section class="container">
-            <div class="content">
-              <div class="text-center mb-24">
-                <h2 class="text-header--5">Estimate Earnings as Another Rank</h2>
-                <p><a class="color-secondary" href="#0">See Earning Snapshot Disclosure</a></p>
-              </div>
-              <div class="banner text-white"> 
-                <p class="text-large">You are estimating your earnings as another rank. Click below to see your current estimate.</p>
-                <p class="see-more"><a class="see-more decoration-none text-uppercase" href="#0">See Breakdown <i class="fa-solid fa-arrow-right icon-space-before"></i></a></p>
-              </div>
-              <div class="mb-24">
-                <div class="columns mb-24"> 
-                  <div class="column">
-                    <div class="field">
-                      <select>
-                        <option value="">May 2025 </option>
-                        <option value="">June 2025 </option>
-                        <option value="">July 2025 </option>
-                        <option value="">August 2025 </option>
-                        <option value="">Sept 2025 </option>
-                      </select>
+          <template x-teleport="body">
+            <div class="modal" :aria-hidden="showModalEstimateEarnings ? 'false' : 'true'" x-show="showModalEstimateEarnings" @keydown.window.escape="showModalEstimateEarnings = false" x-trap.inert.noscroll="showModalEstimateEarnings">
+              <div class="modal-overlay" tabindex="-1" @click="showModalEstimateEarnings = false"></div>
+              <div class="modal-container modal-medium" role="dialog" aria-modal="true" :aria-labelledby="'modal-title-showModalEstimateEarnings'" :aria-describedby="'modal-content-showModalEstimateEarnings'" tabindex="-1">
+                <header class="modal-header centered-content">
+                  <div class="header-content">
+                    <h2 class="text-header--5">Estimate Earnings as Another Rank</h2>
+                    <p><a class="color-secondary" href="#0">See Earning Snapshot Disclosure</a></p>
+                  </div>
+                  <button class="simple modal-close" aria-label="Close modal" @click="showModalEstimateEarnings = false" tabindex="0"><i class="fa-solid fa-xmark"></i></button>
+                </header>
+                <div class="banner text-white"> 
+                  <p class="text-large">You are estimating your earnings as another rank. Click below to see your current estimate.</p>
+                  <p class="see-more"><a class="see-more decoration-none text-uppercase" href="#0">See Breakdown <i class="fa-solid fa-arrow-right icon-space-before"></i></a></p>
+                </div>
+                <div class="mb-24">
+                  <div class="columns mb-24"> 
+                    <div class="column">
+                      <div class="field">
+                        <select>
+                          <option value="">May 2025 </option>
+                          <option value="">June 2025 </option>
+                          <option value="">July 2025 </option>
+                          <option value="">August 2025 </option>
+                          <option value="">Sept 2025 </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="field">
+                        <select>
+                          <option value="">Currency: USD </option>
+                          <option value="">Currency: USD </option>
+                          <option value="">Currency: USD </option>
+                          <option value="">Currency: USD </option>
+                          <option value="">Currency: USD </option>
+                        </select>
+                      </div>
                     </div>
                   </div>
-                  <div class="column">
-                    <div class="field">
-                      <select>
-                        <option value="">Currency: USD </option>
-                        <option value="">Currency: USD </option>
-                        <option value="">Currency: USD </option>
-                        <option value="">Currency: USD </option>
-                        <option value="">Currency: USD </option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="field">
-                  <label>Estimate Earnings As:</label>
-                  <select>
-                    <option value="">Platinum </option>
-                    <option value="">Crown Diamond </option>
-                    <option value="">Royal Crown Diamond</option>
-                  </select>
-                </div>
-              </div>
-              <div class="text-center">
-                <p class="earning-value">USD 26,726</p>
-              </div>
-              <div class="progress-bar-group mt-48"> 
-                <div class="progress-bar-single">
-                  <div class="progress-bar-label">
-                    <p>Starter Bundle Bonus</p>
-                    <p class="bar-value">USD 25</p>
-                  </div>
-                  <div class="progress-bar progress-bar-secondary">
-                    <div class="progress-bar-fill" style="width: 0%"></div>
-                  </div>
-                </div>
-                <div class="progress-bar-single">
-                  <div class="progress-bar-label">
-                    <p>Fast Start Bonus</p>
-                    <p class="bar-value">USD 3,102</p>
-                  </div>
-                  <div class="progress-bar progress-bar-secondary">
-                    <div class="progress-bar-fill" style="width: 10%"></div>
-                  </div>
-                </div>
-                <div class="progress-bar-single">
-                  <div class="progress-bar-label">
-                    <p>Unilevel Bonus Total</p>
-                    <p class="bar-value">USD 9,934</p>
-                  </div>
-                  <div class="progress-bar progress-bar-secondary">
-                    <div class="progress-bar-fill" style="width: 30%"></div>
-                  </div>
-                </div>
-                <div class="progress-bar-single">
-                  <div class="progress-bar-label">
-                    <p>Generation Leadership Bonus</p>
-                    <p class="bar-value">USD 3,520</p>
-                  </div>
-                  <div class="progress-bar progress-bar-secondary">
-                    <div class="progress-bar-fill" style="width: 20%"></div>
-                  </div>
-                </div>
-                <div class="progress-bar-single">
-                  <div class="progress-bar-label">
-                    <p>Personal Generation</p>
-                    <p class="bar-value">USD 2,663</p>
-                  </div>
-                  <div class="progress-bar progress-bar-secondary">
-                    <div class="progress-bar-fill" style="width: 10%"></div>
-                  </div>
-                </div>
-                <div class="progress-bar-single">
-                  <div class="progress-bar-label">
-                    <p>Generations</p>
-                    <p class="bar-value">USD 7,491</p>
-                  </div>
-                  <div class="progress-bar progress-bar-secondary">
-                    <div class="progress-bar-fill" style="width: 20%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-        <div class="my-48"> 
-          <section class="container">
-            <div class="content">
-              <div class="text-center mb-24">
-                <h2 class="text-header--5">Earning Snapshot</h2>
-              </div>
-              <div class="columns mb-32"> 
-                <div class="column">
                   <div class="field">
-                    <select class="style-light">
-                      <option value="">May 2025 </option>
-                      <option value="">June 2025 </option>
-                      <option value="">July 2025 </option>
-                      <option value="">August 2025 </option>
-                      <option value="">Sept 2025 </option>
+                    <label>Estimate Earnings As:</label>
+                    <select>
+                      <option value="">Platinum </option>
+                      <option value="">Crown Diamond </option>
+                      <option value="">Royal Crown Diamond</option>
                     </select>
                   </div>
                 </div>
-                <div class="column">
-                  <div class="field">
-                    <select class="style-light">
-                      <option value="">Currency: USD </option>
-                      <option value="">Currency: USD </option>
-                      <option value="">Currency: USD </option>
-                      <option value="">Currency: USD </option>
-                      <option value="">Currency: USD</option>
-                    </select>
-                  </div>
+                <div class="text-center">
+                  <p class="earning-value">USD 26,726</p>
                 </div>
-              </div>
-              <div class="text-center">
-                <h3 class="text-header--5 subheader">Earnings Snapshot</h3>
-                <p class="earning-value">USD 26,726 </p>
-                <h2 class="text-header--3 mt-32">Earned Rank: Platinum</h2>
-              </div>
-              <div class="progress-bar-group mt-48"> 
-                <div class="progress-bar-single">
-                  <div class="progress-bar-label">
-                    <p>Starter Bundle Bonus</p>
-                    <p class="bar-value">USD 25</p>
+                <div class="progress-bar-group mt-48"> 
+                  <div class="progress-bar-single">
+                    <div class="progress-bar-label">
+                      <p>Starter Bundle Bonus</p>
+                      <p class="bar-value">USD 25</p>
+                    </div>
+                    <div class="progress-bar progress-bar-secondary">
+                      <div class="progress-bar-fill" style="width: 0%"></div>
+                    </div>
                   </div>
-                  <div class="progress-bar">
-                    <div class="progress-bar-fill" style="width: 0%"></div>
+                  <div class="progress-bar-single">
+                    <div class="progress-bar-label">
+                      <p>Fast Start Bonus</p>
+                      <p class="bar-value">USD 3,102</p>
+                    </div>
+                    <div class="progress-bar progress-bar-secondary">
+                      <div class="progress-bar-fill" style="width: 10%"></div>
+                    </div>
                   </div>
-                </div>
-                <div class="progress-bar-single">
-                  <div class="progress-bar-label">
-                    <p>Fast Start Bonus</p>
-                    <p class="bar-value">USD 3,102</p>
+                  <div class="progress-bar-single">
+                    <div class="progress-bar-label">
+                      <p>Unilevel Bonus Total</p>
+                      <p class="bar-value">USD 9,934</p>
+                    </div>
+                    <div class="progress-bar progress-bar-secondary">
+                      <div class="progress-bar-fill" style="width: 30%"></div>
+                    </div>
                   </div>
-                  <div class="progress-bar">
-                    <div class="progress-bar-fill" style="width: 10%"></div>
+                  <div class="progress-bar-single">
+                    <div class="progress-bar-label">
+                      <p>Generation Leadership Bonus</p>
+                      <p class="bar-value">USD 3,520</p>
+                    </div>
+                    <div class="progress-bar progress-bar-secondary">
+                      <div class="progress-bar-fill" style="width: 20%"></div>
+                    </div>
                   </div>
-                </div>
-                <div class="progress-bar-single">
-                  <div class="progress-bar-label">
-                    <p>Unilevel Bonus Total</p>
-                    <p class="bar-value">USD 9,934</p>
+                  <div class="progress-bar-single">
+                    <div class="progress-bar-label">
+                      <p>Personal Generation</p>
+                      <p class="bar-value">USD 2,663</p>
+                    </div>
+                    <div class="progress-bar progress-bar-secondary">
+                      <div class="progress-bar-fill" style="width: 10%"></div>
+                    </div>
                   </div>
-                  <div class="progress-bar">
-                    <div class="progress-bar-fill" style="width: 30%"></div>
-                  </div>
-                </div>
-                <div class="progress-bar-single">
-                  <div class="progress-bar-label">
-                    <p>Generation Leadership Bonus</p>
-                    <p class="bar-value">USD 3,520</p>
-                  </div>
-                  <div class="progress-bar">
-                    <div class="progress-bar-fill" style="width: 20%"></div>
-                  </div>
-                </div>
-                <div class="progress-bar-single">
-                  <div class="progress-bar-label">
-                    <p>Personal Generation</p>
-                    <p class="bar-value">USD 2,663</p>
-                  </div>
-                  <div class="progress-bar">
-                    <div class="progress-bar-fill" style="width: 10%"></div>
-                  </div>
-                </div>
-                <div class="progress-bar-single">
-                  <div class="progress-bar-label">
-                    <p>Generations</p>
-                    <p class="bar-value">USD 7,491</p>
-                  </div>
-                  <div class="progress-bar">
-                    <div class="progress-bar-fill" style="width: 20%"></div>
+                  <div class="progress-bar-single">
+                    <div class="progress-bar-label">
+                      <p>Generations</p>
+                      <p class="bar-value">USD 7,491</p>
+                    </div>
+                    <div class="progress-bar progress-bar-secondary">
+                      <div class="progress-bar-fill" style="width: 20%"></div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
+          </template>
+          <template x-teleport="body">
+            <div class="modal" :aria-hidden="showModalEarningsSnapshot ? 'false' : 'true'" x-show="showModalEarningsSnapshot" @keydown.window.escape="showModalEarningsSnapshot = false" x-trap.inert.noscroll="showModalEarningsSnapshot">
+              <div class="modal-overlay" tabindex="-1" @click="showModalEarningsSnapshot = false"></div>
+              <div class="modal-container modal-medium" role="dialog" aria-modal="true" :aria-labelledby="'modal-title-showModalEarningsSnapshot'" :aria-describedby="'modal-content-showModalEarningsSnapshot'" tabindex="-1">
+                <header class="modal-header centered-content">
+                  <div class="header-content">
+                    <h2 class="text-header--5">Estimate Earnings as Another Rank</h2>
+                    <p><a class="color-secondary" href="#0">See Earning Snapshot Disclosure</a></p>
+                  </div>
+                  <button class="simple modal-close" aria-label="Close modal" @click="showModalEarningsSnapshot = false" tabindex="0"><i class="fa-solid fa-xmark"></i></button>
+                </header>
+                <div class="modal-content">
+                  <div class="text-center mb-24">
+                    <h2 class="text-header--5">Earning Snapshot</h2>
+                  </div>
+                  <div class="columns mb-32"> 
+                    <div class="column">
+                      <div class="field">
+                        <select class="style-light">
+                          <option value="">May 2025 </option>
+                          <option value="">June 2025 </option>
+                          <option value="">July 2025 </option>
+                          <option value="">August 2025 </option>
+                          <option value="">Sept 2025 </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="field">
+                        <select class="style-light">
+                          <option value="">Currency: USD </option>
+                          <option value="">Currency: USD </option>
+                          <option value="">Currency: USD </option>
+                          <option value="">Currency: USD </option>
+                          <option value="">Currency: USD</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <h3 class="text-header--5 subheader">Earnings Snapshot</h3>
+                    <p class="earning-value">USD 26,726 </p>
+                    <h2 class="text-header--3 mt-32">Earned Rank: Platinum</h2>
+                  </div>
+                  <div class="progress-bar-group mt-48"> 
+                    <div class="progress-bar-single">
+                      <div class="progress-bar-label">
+                        <p>Starter Bundle Bonus</p>
+                        <p class="bar-value">USD 25</p>
+                      </div>
+                      <div class="progress-bar">
+                        <div class="progress-bar-fill" style="width: 0%"></div>
+                      </div>
+                    </div>
+                    <div class="progress-bar-single">
+                      <div class="progress-bar-label">
+                        <p>Fast Start Bonus</p>
+                        <p class="bar-value">USD 3,102</p>
+                      </div>
+                      <div class="progress-bar">
+                        <div class="progress-bar-fill" style="width: 10%"></div>
+                      </div>
+                    </div>
+                    <div class="progress-bar-single">
+                      <div class="progress-bar-label">
+                        <p>Unilevel Bonus Total</p>
+                        <p class="bar-value">USD 9,934</p>
+                      </div>
+                      <div class="progress-bar">
+                        <div class="progress-bar-fill" style="width: 30%"></div>
+                      </div>
+                    </div>
+                    <div class="progress-bar-single">
+                      <div class="progress-bar-label">
+                        <p>Generation Leadership Bonus</p>
+                        <p class="bar-value">USD 3,520</p>
+                      </div>
+                      <div class="progress-bar">
+                        <div class="progress-bar-fill" style="width: 20%"></div>
+                      </div>
+                    </div>
+                    <div class="progress-bar-single">
+                      <div class="progress-bar-label">
+                        <p>Personal Generation</p>
+                        <p class="bar-value">USD 2,663</p>
+                      </div>
+                      <div class="progress-bar">
+                        <div class="progress-bar-fill" style="width: 10%"></div>
+                      </div>
+                    </div>
+                    <div class="progress-bar-single">
+                      <div class="progress-bar-label">
+                        <p>Generations</p>
+                        <p class="bar-value">USD 7,491</p>
+                      </div>
+                      <div class="progress-bar">
+                        <div class="progress-bar-fill" style="width: 20%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
         </div>
       </main>
     </div>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="./assets/js/app.min.js"></script>
   </body>

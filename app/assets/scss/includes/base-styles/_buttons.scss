@@ -11,8 +11,8 @@ BUTTONS
   border: none;
   @include transition();
   -webkit-appearance: none;
-  background: var(--yl-primary);
-  border: 1px solid var(--yl-primary);
+  background: var(--yl-blue);
+  border: 1px solid var(--yl-blue);
   color: var(--yl-white);
   text-decoration: none;
   padding: rem(12) rem(32);
@@ -26,23 +26,9 @@ BUTTONS
   &:hover,
   &:focus,
   &:active {
-    background: var(--yl-olive);
-    border: 1px solid var(--yl-olive);
+    background: var(--yl-blue);
+    border: 1px solid var(--yl-blue);
     color: var(--yl-white);
-  }
-
-  &.ghost {
-    background: transparent;
-    color: var(--yl-primary);
-    border-color: var(--yl-primary);
-
-    &:hover,
-    &:focus,
-    &:active {
-      background: var(--yl-white);
-      color: var(--yl-olive);
-      border-color: var(--yl-olive);
-    }
   }
 
   svg {
@@ -78,4 +64,22 @@ BUTTONS
   background: transparent;
   border: none;
   cursor: pointer;
+
+  color: var(--yl-link-color);
+  @include transition();
+  text-decoration: none;
+  font-size: rem(16);
+  line-height: 1.4em;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--yl-link-hover-color);
+    text-decoration: underline;
+  }
+
+  &.secondary {
+    --yl-link-color: var(--yl-blue);
+    --yl-link-hover-color: var(--yl-blue);
+  }
 }

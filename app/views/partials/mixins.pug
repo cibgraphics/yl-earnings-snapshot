@@ -246,3 +246,21 @@ mixin svg(id, classname)
   else
     svg
       use(xlink:href=id)
+
+
+mixin modalHeader(id=false)
+  header.modal-header.centered-content
+    if block
+      .header-content
+        block
+
+    button.simple.modal-close(aria-label='Close modal' @click=`${id} = false` tabindex='0')
+      i.fa-solid.fa-xmark
+
+mixin modal(id, modalClass, showCloseButton=true, teleport='body')
+
+  template(x-teleport=teleport)
+    .modal(:aria-hidden=`${id} ? 'false' : 'true'` x-show=id @keydown.window.escape=`${id} = false` x-trap.inert.noscroll=id)
+      .modal-overlay(tabindex='-1' @click=`${id} = false`)
+      .modal-container(role='dialog' aria-modal='true' :aria-labelledby=`'modal-title-${id}'` :aria-describedby=`'modal-content-${id}'` class=modalClass tabindex='-1')
+        block

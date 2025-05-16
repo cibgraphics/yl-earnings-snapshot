@@ -1,0 +1,139 @@
+/*
+-----------------------------------------
+MODAL
+-----------------------------------------
+*/
+
+:root {
+  --yl_modal-background: rgba(0, 0, 0, 0.5);
+  --yl_modal-max-width: 600px;
+  --yl-modal-padding: 24px;
+
+  --yl_modal-max-width-xxlarge: 1065px;
+  --yl_modal-max-width-large: 1200px;
+  --yl_modal-max-width-medium: 627px;
+  --yl_modal-max-width-small: 480px;
+  --yl_modal-max-width-xsmall: 400px;
+  --yl_modal-max-width-xxsmall: 360px;
+  --yl_modal-max-width-xxxsmall: 325px;
+}
+
+body:has(.modal.modal-open) {
+  overflow-y: hidden;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+}
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  z-index: 1001;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-container {
+  background-color: var(--yl-white);
+  padding: var(--yl-modal-padding);
+  max-width: var(--yl_modal-max-width);
+  width: calc(100% - 40px);
+  max-height: calc(100vh - 40px);
+  border-radius: var(--yl-radius);
+  overflow-y: auto;
+  box-shadow: var(--yl-shadow);
+  position: fixed;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1002;
+  overflow-x: hidden;
+
+  /* Sizes */
+
+  &.modal-xxlarge {
+    max-width: var(--yl_modal-max-width-xxlarge);
+  }
+
+  &.modal-medium {
+    max-width: var(--yl_modal-max-width-medium);
+  }
+
+  &.modal-small {
+    max-width: var(--yl_modal-max-width-small);
+  }
+
+  &.modal-xsmall {
+    max-width: var(--yl_modal-max-width-xsmall);
+  }
+
+  &.modal-xxsmall {
+    max-width: var(--yl_modal-max-width-xxsmall);
+  }
+
+  &.modal-xxxsmall {
+    max-width: var(--yl_modal-max-width-xxxsmall);
+  }
+
+  /* Padding */
+
+  &.modal-full {
+    padding: 0;
+    position: relative;
+
+    .modal-close {
+      position: absolute;
+      inset-block-start: rem(14);
+      inset-inline-end: rem(14);
+    }
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding-inline-start: rem(32);
+  margin-block-end: rem(24);
+
+  &.centered-content {
+    padding-inline: rem(32);
+    text-align: center;
+  }
+
+  .header-content {
+    flex: 1;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .header-center & h2 {
+    text-align: center;
+  }
+}
+
+button.simple.modal-close {
+  position: absolute;
+  inset-block-start: rem(0);
+  inset-inline-end: rem(0);
+  font-size: rem(32);
+  color: var(--yl-gray-50);
+}
+
+.modal-content {
+  padding-block-start: rem(12);
+
+  &:has(.modal-container-with-image) {
+    padding-block-start: 0;
+  }
+}
