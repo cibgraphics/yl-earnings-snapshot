@@ -22,8 +22,7 @@
               <div class="shadow-box">
                 <h2 class="shadow-box-header">Earnings Snapshot<a class="decoration-none" href="#0"><i class="fa-regular fa-circle-question icon-space-before"></i></a></h2>
                 <div class="text-center mb-12">
-                  <h3 class="text-header--5 mb-4">Current Rank: <span class="rank">
-                       Platinum</span></h3>
+                  <h3 class="text-header--5 mb-4">Current Rank: <img class="rank-icon mx-4" src="/assets/images/rank-icons/platinum.svg" alt="">Platinum</h3>
                   <p> 
                     <button class="simple decoration-none secondary" @click="showModalEstimateEarnings = true">Estimate Earnings as Another Rank<i class="fa-solid fa-arrow-right icon-space-before"></i></button>
                   </p>
@@ -152,15 +151,11 @@
               <div class="modal-container modal-medium" role="dialog" aria-modal="true" :aria-labelledby="'modal-title-showModalEarningsSnapshot'" :aria-describedby="'modal-content-showModalEarningsSnapshot'" tabindex="-1">
                 <header class="modal-header centered-content">
                   <div class="header-content">
-                    <h2 class="text-header--5">Estimate Earnings as Another Rank</h2>
-                    <p><a class="color-secondary" href="#0">See Earning Snapshot Disclosure</a></p>
+                    <h2 class="text-header--5">Earnings Snapshot</h2>
                   </div>
                   <button class="simple modal-close" aria-label="Close modal" @click="showModalEarningsSnapshot = false" tabindex="0"><i class="fa-solid fa-xmark"></i></button>
                 </header>
                 <div class="modal-content">
-                  <div class="text-center mb-24">
-                    <h2 class="text-header--5">Earning Snapshot</h2>
-                  </div>
                   <div class="columns mb-32"> 
                     <div class="column">
                       <div class="field">
@@ -188,7 +183,7 @@
                   <div class="text-center">
                     <h3 class="text-header--5 subheader">Earnings Snapshot</h3>
                     <p class="earning-value">USD 26,726 </p>
-                    <h2 class="text-header--3 mt-32">Earned Rank: Platinum</h2>
+                    <h2 class="text-header--3 mt-32">Earned Rank:<img class="rank-icon mx-4" src="/assets/images/rank-icons/platinum.svg" alt="">Platinum</h2>
                   </div>
                   <div class="progress-bar-group mt-48"> 
                     <div class="progress-bar-single">

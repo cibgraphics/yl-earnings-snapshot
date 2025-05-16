@@ -112,9 +112,13 @@ main {
 
 .columns {
   display: flex;
-  gap: rem(32);
+  gap: rem(16) rem(32);
 
   > * {
     flex: 1;
+  }
+
+  @include mq("phone", "<") {
+    flex-direction: column;
   }
 }

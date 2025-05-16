@@ -23,8 +23,8 @@ block content
               i.fa-regular.fa-circle-question.icon-space-before
           .text-center.mb-12
             h3.text-header--5.mb-4 Current Rank: 
-              span.rank 
-                | Platinum
+              img(src="/assets/images/rank-icons/platinum.svg", alt="").rank-icon.mx-4  
+              | Platinum
             p 
               button( @click="showModalEstimateEarnings = true").simple.decoration-none.secondary Estimate Earnings as Another Rank
                 i.fa-solid.fa-arrow-right.icon-space-before
@@ -86,13 +86,8 @@ block content
 
     +modal('showModalEarningsSnapshot', 'modal-medium')
       +modalHeader('showModalEarningsSnapshot')
-        h2.text-header--5 Estimate Earnings as Another Rank
-        p
-          a(href="#0").color-secondary See Earning Snapshot Disclosure
+        h2.text-header--5 Earnings Snapshot
       .modal-content
-        .text-center.mb-24
-          h2.text-header--5 Earning Snapshot
-
         .columns.mb-32 
           .column
             .field
@@ -115,7 +110,9 @@ block content
           h3.text-header--5.subheader Earnings Snapshot
           p.earning-value USD 26,726 
 
-          h2.text-header--3.mt-32 Earned Rank: Platinum
+          h2.text-header--3.mt-32 Earned Rank:
+            img(src="/assets/images/rank-icons/platinum.svg", alt="").rank-icon.mx-4 
+            | Platinum
         
         .progress-bar-group.mt-48 
           each bundle in bundles
